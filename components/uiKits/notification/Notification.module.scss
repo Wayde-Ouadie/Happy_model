@@ -1,0 +1,14 @@
+@import 'styles/text.scss';
+
+.notification_container{
+    @apply flex flex-row;
+    @apply relative;
+    .text{
+        &_state{
+            &_error{
+                @apply text-error_1/80;
+                @apply para_xs text-right;
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+@import "./scss/flex";
+@import './scss/grid';
+
+@import 'styles/text.scss';
+@import 'styles/style.scss';
+
+// text
+.item{
+    &_attribute{
+        @apply title_h3 text-#{$primary};
+    }
+    &_value{
+        @apply para_md text-#{$secondaryGrey};
+    }
+}
+.content_container{
+    .content{
+        &_description{
+            @apply text-center sm:text-end text-#{$secondary};
+            @apply para_md;
+            @apply lg:pb-20 2xl:pb-12;
+            .text{
+                @apply w-full lg:w-11/12 2xl:w-9/12;
+            }
+            .cart{
+                @apply w-[12rem] xs:w-[32rem] lg:w-40;
+                
+            }
+        }
+        &_image{
+            @apply relative;
+            @apply pr-0 xl:pr-6 2xl:pr-12;
+            .next{
+                @apply right-0 xl:right-16;
+                @apply bottom-20 xs:bottom-40 lg:bottom-24 xl:bottom-40;
+                @apply absolute;
+            }
+        }
+    }
+}

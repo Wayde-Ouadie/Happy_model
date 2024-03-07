@@ -1,0 +1,39 @@
+@use "sass:list";
+
+@mixin gridSys($list, $direction) {
+
+      @each $child,
+      $values in $list {
+            $start: nth($values, 1);
+            $span: nth($values, 2);
+
+            &:nth-child(#{$child}) {
+                  @apply #{$direction}-start-#{$start} #{$direction}-span-#{$span};
+            }
+      }
+}
+
+@mixin gridMatrice($list, $direction) {
+
+      @each $breakpoint,
+      $values in $list {
+
+            // $listValue: nth($values, 1);
+
+            @if $breakpoint ==none {
+                  @include gridSys($values, $direction);
+            }
+
+            @else {
+                  @screen #{$breakpoint} {
+                        @include gridSys($values, $direction);
+                  }
+            }
+
+
+      }
+
+      @content;
+}
+
+// #include gridMatrice(('none': ('1', 1, 4)),'row')

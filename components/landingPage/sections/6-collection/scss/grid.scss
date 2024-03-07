@@ -1,0 +1,21 @@
+@import 'styles/function/grid.scss';
+
+.collection_body{
+      .body_image{
+            @apply grid grid-rows-1 grid-cols-11;
+            .image{
+                  &_collection_1{
+                        @include grid(('none': (1, 4)), 'col');
+                        @include grid(('none': (1, 1)), 'row');
+                  }
+                  &_collection_2{
+                        @include grid(('none': (4, 5)), 'col');
+                        @include grid(('none': (1, 1)), 'row');
+                  }
+                  &_collection_3{
+                        @include grid(('none': (8, 4)), 'col');
+                        @include grid(('none': (1, 1)), 'row');
+                  }
+            }
+      }
+}

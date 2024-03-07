@@ -1,0 +1,26 @@
+@import 'styles/function/flex.scss';
+
+.content_container{
+    @apply space-y-12 lg:space-y-0;
+    .content{
+        &_description{
+            @include flex(('none': ('col', 6),'xs': ('row', 6),'lg': ('col', 4))){
+                @apply justify-center items-center sm:items-center lg:items-end justify-items-end;
+            };
+        }
+        &_image{
+            @include flex(('none': ('col', 0))){
+                @apply justify-center items-center;
+            }
+        }
+        &_data{
+            @include flex(('none': ('row', 0),'sm': ('col', 12))){
+                @apply justify-between sm:justify-center items-center;
+            };
+            .item{
+                @apply flex flex-col justify-center items-center;
+                @apply space-y-4 lg:space-y-2;
+            }
+        }
+    }
+}

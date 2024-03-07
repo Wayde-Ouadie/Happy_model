@@ -1,0 +1,48 @@
+
+@import 'styles/function/flex.scss';
+
+.flex-columns{
+      @apply flex flex-col;
+      @apply justify-between items-start;
+}
+
+.eggsSlide_container{
+      @apply flex;
+      .eggsSlide{
+            &_text{
+                  @apply flex;
+                  @include flex(('none': ('col', 12), 'md': ('row', 16), 'lg': ('col', 0))){
+                        @apply items-start justify-start lg:justify-between;
+                  }
+                  .text{
+                        &_content{
+                              @apply flex flex-col space-y-8;
+                              @apply justify-start items-start;
+                        }
+                        &_nav{
+                              @apply flex flex-row space-x-6 2xl:space-x-12;
+                        }
+                  }
+            }
+            &_image{
+                  @apply flex;
+            }
+            &_data{
+                  @apply flex-columns space-y-8 sm:space-y-24;
+                  .data_price{
+                        @apply flex flex-row sm:flex-col;
+                        @apply space-x-6 sm:space-x-0;
+                        @apply space-y-0 sm:space-y-4;
+                        @apply items-center sm:items-start justify-center sm:justify-start;
+                        .price_content{
+                              @apply flex flex-row space-x-4;
+                              @apply items-center justify-center;
+                        }
+                  }
+                  .data_characteristic{
+                        @apply flex flex-col space-y-8;
+                  }
+            }
+      }
+      
+}

@@ -1,0 +1,32 @@
+
+@import 'styles/container.scss';
+@import 'styles/text.scss';
+
+
+.roadMap_container{
+      @apply container_section container_section_large;
+      @apply space-y-16 h-auto;
+      .roadMap{
+            &_head{
+                  @apply w-full sm:w-4/5 md:w-3/5 xl:w-1/2 mx-auto;
+                  @apply flex flex-col space-y-8;
+                  // text
+                  @apply text-center;
+                  .head_title{
+                        @apply title_h2 text-#{$primary};
+                        @apply capitalize;
+                  }
+                  .head_description{
+                        @apply para_sm text-#{$secondary};
+                        @apply w-full xl:w-8/12;
+                        @apply mx-auto;
+                        @screen md{
+                              @apply para_md;
+                        }
+                  }
+            }
+            &_map{
+                  
+            }
+      }
+}

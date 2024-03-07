@@ -1,0 +1,19 @@
+// GRID
+.about_container{
+      @apply grid grid-rows-8 sm:grid-rows-5 lg:grid-rows-6 grid-cols-12 auto-cols-max;
+      .about{
+          &_motivation{
+              @include grid(('none': ('1','12'),'lg': ('1', '3'),'xl': ('1', '4'), '4xl': ('1', '3')), 'col');
+              @include grid(('none': ('8', '1'),'sm': ('5','1'),'lg': ('3', '2'), 'xl': ('4', '2')), 'row');
+                @apply place-self-end;
+          }
+          &_images{
+              @include grid(('none': ('1', '12'), 'xxs': ('1', '11'),'xs': ('1', '10'),'sm': ('1','6'),'lg': ('4', '5'), 'xl': ('5', '4')), 'col');
+              @include grid(('none': ('1', '6'),'sm': ('1','4'),'lg': ('1', '6')), 'row');
+          }
+          &_description{
+              @include grid(('none': ('1', '12'), 'xxs': ('1', '11'),'sm': ('8','6'),'lg': ('9', '5'), '4xl': ('10', '4')), 'col');
+              @include grid(('none': ('7', '1'),'sm': ('2','3'),'md': ('2', '2'),'lg': ('3', '2')), 'row');
+          }
+      }
+  }

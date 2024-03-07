@@ -1,0 +1,144 @@
+@import 'styles/text.scss';
+@import 'styles/function/grid.scss';
+
+@import './function.scss';
+
+.stageContent{
+      @apply list-none;
+      .stage_text{
+            @apply flex flex-col space-y-1 sm:space-y-4;
+      
+            .stage_title{
+                  @apply text-#{$primary} title_h4;
+            }
+            .stage_description{
+                  @apply text-#{$secondaryGrey} para_sm;
+            }
+      }
+}
+
+.change-horizontal-orientation {
+      @media (max-width: 1024px) {
+            transform: scaleX(-1);
+            filter: FlipH;
+            -ms-filter: "FlipH";
+            float: none;
+      }
+}
+
+/*
+      GRID SYSTEM
+*/
+.map_content{
+      @apply grid grid-rows-1 gap-0;
+      @apply relative;
+      @apply h-[2600px] xxs:h-[3200px] md:h-[3400px] lg:h-[2100px] xl:h-[2700px] 4xl:h-[3000px];
+      @apply items-start justify-start;
+      @apply w-full md:w-11/12 lg:w-full m-auto;
+      .stageContent{
+            @apply grid grid-rows-[repeat(8,minmax(0,_1fr))] gap-0;
+            @include grid(('none': (1, 3)), 'col');
+            @include grid(('none': (1, 1)), 'row') ;
+      }
+      .stageContent_1{
+            z-index: 100;
+            .stage{
+                  &_text{
+                        @apply z-[6000];
+                        @apply justify-end;
+                        @include grid(('none': (1, 3),'xs': (2, 3),'sm': (2, 3),'2xl':(3, 2), '3xl': (2, 2)), 'row');
+                        @include grid(('none':(1, 5),'xs': (1, 4),'sm': (2,3),'lg': (1, 4),'xl': (1, 4),'2xl':(2, 3),'3xl': (2, 3)), 'col');
+                  }
+                  &_image{
+                        &:before{
+                              content: '';
+                              @apply h-80 lg:h-36 xl:h-60 2xl:h-80 top-0 absolute w-full;
+                              @apply bg-gradient-to-b from-dark_0 to-dark_0/0 z-[500];
+                        }
+                        @apply w-full flex justify-end;
+                        @include grid(('none': (1, 6)), 'row');
+                        @include grid(('none': (1, 7)), 'col');
+                  }
+            }
+      }
+      .stageContent_2{
+            z-index: 90;
+            @include top(('none': 260, 'sm': 210, 'md': 200, 'lg': 280, 'xl': 300, '2xl': 360), 'px');
+            .stage{
+                  &_text{
+                        @apply mt-5 sm:mt-24 lg:-mt-0;
+                        @apply justify-end md:justify-end lg:justify-start xl:justify-end;
+                        @include grid(('none': (2, 1),'xxs': (3 ,1),'sm': (3, 1),'lg': (2, 2),'xl':(2, 2)), 'row');
+                        @include grid(('none': (1, 11),'lg': (9, 5),'xl': (11, 3),'2xl': (11, 3),'3xl': (11, 2)), 'col');
+                  }
+                  &_image{
+                        @apply w-full grid justify-items-end lg:justify-items-start lg:justify-start;
+                        @include grid(('none': (1, 6)),'row');
+                        @include grid(('none': (7, 7)), 'col');
+                  }
+            }
+      }
+      .stageContent_3{
+            z-index: 80;
+            @include top(('none': 820, 'xxs': 890, 'md': 940, 'lg': 530, 'xl': 520, '2xl': 600, '3xl': 620, '4xl': 700), 'px');
+            .stage{
+                  &_text{
+                        @apply justify-end xxs:justify-center sm:justify-end xl:justify-center;
+                        @apply pr-6 sm:pr-0 mb-0 sm:-mb-32 md:-mb-16 lg:mb-0 2xl:mb-12 3xl:mb-0;
+                        @include grid(('none': (3, 3),'xxs': (4, 2),'xs': (5, 1),'sm': (4, 3),'lg': (3, 2),'xl': (4, 2), '2xl': (4, 2)), 'row');
+                        @include grid(('none': (1, 6), 'sm': (1, 2),'lg': (1, 5),'xl': (2, 4),'2xl': (2, 3)), 'col');
+                  }
+                  &_image{
+                        @apply w-full flex justify-end;
+                        @include grid(('none': (1, 6)), 'row');
+                        @include grid(('none': (1, 7)), 'col');
+                        .imageSvg{
+                              @apply right-2 relative;
+                        }
+                  }
+            }
+      }
+      .stageContent_4{
+            z-index: 70;
+            @include top(('none': 1400, 'xxs': 1500, 'sm': 1380, 'md': 1550, 'lg': 840, 'xl': 900, '2xl': 940, '3xl': 900, '4xl': 1100), 'px');
+            @apply h-[1500px];
+            .stage{
+                  &_text{
+                        @apply justify-center xxs:justify-center xxs:pb-20 sm:pb-0 md:justify-end lg:justify-start ;
+                        @include grid(('none': (1, 2),'xxs': (2, 2),'xs': (4, 2),'md':(5, 2),'lg': (3, 2),'xl':(5, 2),'2xl': (6, 2)),'row');
+                        @include grid(('none': (1, 10),'sm':(1, 5),'lg': (11, 3),'2xl': (11, 3),'3xl': (11, 2),'4xl': (11, 3)), 'col');
+                  }
+                  &_image{
+                        // @apply change-horizontal-orientation;
+                        @apply w-full flex justify-start;
+                        @apply grid justify-items-end lg:justify-items-start grid-cols-1 grid-rows-1;
+                        > * {
+                              @include grid(('none': (1, 1)),'row');
+                              @include grid(('none': (1, 1)), 'col');
+                        }
+                        @include grid(('none': (1, 6)),'row');
+                        @include grid(('none': (7, 7)), 'col');
+                  }
+            }
+      }
+      .stageContent_5{
+            z-index: 60;
+            @include top(('none': 1800, 'xxs': 2000, 'xs': 2100, 'sm': 1900, 'md': 2200, 'lg': 1350, 'xl': 1600, '2xl': 1680, '3xl': 1780, '4xl': 2000), 'px');
+            height: 1200px;
+            .stage{
+                  &_text{
+                        @apply justify-center md:justify-start xl:justify-center 3xl:justify-start;
+                        @include grid(('none':(3, 2),'xs':(4, 3),'sm':(4, 2), 'md': (5, 2),'lg': (3, 2),'xl': (4, 2),'2xl': (3, 2),'3xl': (4, 2)), 'row');
+                        @include grid(('none': (1, 5),'sm': (1, 5),'md': (2, 4),'2xl': (3, 3)), 'col');
+                  }
+                  &_image{
+                        @apply w-full h-full flex justify-end lg:justify-center;
+                        
+                        @include grid(('none': (1, 6)), 'row');
+                        grid-column-start: 1;
+                        grid-row: span 1 / span 6; 
+                        grid-column: span 13 / span 13;
+                  }
+            }
+      }
+}

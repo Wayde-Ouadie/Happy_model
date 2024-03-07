@@ -1,0 +1,85 @@
+@import "styles/container.scss";
+@import "styles/text.scss";
+
+@import './scss/flex.scss';
+@import './scss/grid.scss';
+
+
+.eggsSlide_container{
+
+      @apply container_section container_section_large;
+      @apply py-20;
+      .eggsSlide{
+            &_text, &_data{
+                  @apply pt-12 sm:pt-0 md:pt-24 xl:pt-36 2xl:pt-40;
+            }
+            &_text{
+                  @apply mt-0 sm:mt-20 md:mt-0;
+            }
+      }
+}
+
+// text
+.eggsSlide{
+      &_text{
+            .text{
+                  @apply z-30;
+                 .content{
+
+                        &_title{
+                              @apply title_h2 text-#{$primary};
+                        }
+                        &_description {
+                              @apply para_md text-#{$secondary};
+                              @apply w-11/12 2xl:w-9/12;
+                        }
+                 } 
+            }
+      }
+      &_image{
+            @apply h-[70vh] xxs:h-[80vh] sm:h-auto;
+            .deco{
+                  @apply z-20;
+            }
+            .egg{
+                  
+                  @apply w-10/12 mt-auto mx-auto z-40;
+                  filter: drop-shadow(0px -80px 25px #0C122630);
+            }
+            .background{
+                  @apply bg-gradient-to-t z-0;
+                  div{
+                        @apply rounded-t-[6rem] w-full;
+                        @apply w-full h-full;
+                  }
+                  &_blue .color{
+                        @apply bg-gradient-to-t from-egg_b/5 to-egg_b;
+                  }
+                  &_red .color{
+                        @apply bg-gradient-to-t from-egg_r/5 to-egg_r;
+                  }
+                  &_purple .color{
+                        @apply bg-gradient-to-t from-egg_pr/5 to-egg_pr;
+                  }
+            }
+      }
+      &_data{
+            .data_price{
+                  .price{
+                        &_head p{
+                              @apply para_md;
+                              @apply text-#{$secondary}
+                        }
+                        &_content{
+                              @apply title_h4 text-#{$primary};
+                              .priceValue{
+                                    @apply pb-2;
+                              }
+                        }
+                  }
+            }
+            .data_characteristic{
+                  @apply w-full;
+            }
+      }
+}

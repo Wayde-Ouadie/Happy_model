@@ -1,0 +1,52 @@
+
+@import 'styles/container.scss';
+@import 'styles/text.scss';
+
+
+.eggsOverview_container{
+      @apply container_section container_section_small;
+      @apply relative;
+      @apply h-[80vh] xs:h-screen;
+      .eggsOverview_content{
+            // flex
+            @apply flex flex-col space-y-0;
+            @apply justify-center items-center;
+            @apply relative;
+            @apply w-full sm:w-fit m-auto px-0 sm:px-28 md:px-32 lg:px-40 py-40 xl:py-20;
+            // text
+            li{
+                  @apply text-#{$secondary};
+                  @apply font-black;
+                  @apply leading-tight xs:leading-none lg:leading-tight;
+                  @apply tracking-widest;
+                  @apply text-[5rem] xxs:text-[6rem] xs:text-[7rem] md:text-[8.2rem] lg:text-[9rem] xl:text-[10rem];
+            }
+            .egg_deco{
+                  @apply absolute top-0 right-0 left-0 bottom-0;
+                  .egg{
+                        @apply w-52 absolute;
+                        &_blue{
+                              @apply bottom-20 xs:bottom-10 sm:bottom-16 md:bottom-8 lg:bottom-0;
+                              @apply -right-4 xs:right-8 sm:right-16 lg:right-10;
+                              filter: blur(2px);
+                              @apply w-[40%] xxs:w-[32%] sm:w-[21%] md:w-[23%];
+                              transform: rotate(20deg);
+                        }
+                        &_red{
+                              @apply -left-10 xs:left-0 sm:left-10 lg:left-10;
+                              @apply top-[30%];
+                              @apply w-[30%] xxs:w-[25%] sm:w-[18%] md:w-[20%];
+                              filter: blur(2px);
+                              transform: rotate(-20deg);
+                        }
+                        &_purple{
+                              @apply right-2 sm:right-10 xl:-right-4;
+                              @apply top-4 md:top-20 xl:top-0;
+                              @apply w-[32%] xxs:w-[28%] sm:w-[23%] md:w-[27%];
+                              filter: blur(3px);
+                              transform: rotate(30deg);
+                        }
+                  }
+            }
+      }
+}

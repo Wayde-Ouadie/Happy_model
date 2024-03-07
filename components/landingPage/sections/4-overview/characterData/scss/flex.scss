@@ -1,0 +1,18 @@
+@import 'styles/function/flex.scss';
+
+.data_container {
+    @apply flex items-center justify-center;
+   
+    > .content{
+        @include flex(('none': ('col', 6),'xxs': ('col', 10),'xs': ('col', 16),'sm': ('row', 0), 'lg': ('row', 4) ,'2xl': ('row', 6))){
+            @apply items-start lg:items-center justify-between;
+            @apply flex-wrap;
+        };
+        .widget{
+            @include flex(('none': ('col', 2),'xxs':('row', 5),'xs':('row', 8),'sm': ('col', 6),'md': ('row', 5),'lg': ('col', 6),'xl': ('row', 8))){
+                @apply items-start xl:items-center justify-start;
+            };
+        }
+    } 
+}
+

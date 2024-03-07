@@ -1,0 +1,73 @@
+@import 'styles/container.scss';
+@import 'styles/function/grid.scss';
+@import 'styles/text.scss';
+
+@import 'styles/function/gridMatrice.scss';
+
+.assets_container {
+      @apply flex flex-col space-y-12;
+
+      .assets_title {
+            @apply container_section container_section_medium;
+
+            .text {
+                  @apply mx-auto w-full sm:w-8/12;
+            }
+      }
+}
+
+// text
+.assets_container {
+      
+      .assets_title {
+            @apply title_h2 text-center text-#{$primary};
+      }
+      .assets_collection_row{
+            @apply w-[140%] xs:w-[120%] left-[-20%] xs:left-[-10%] relative flex flex-col;
+            @apply gap-3 xs:gap-5 h-[120vh] xs:h-[80vh] sm:h-[70vh] lg:h-[72vh] grid grid-rows-[repeat(12,minmax(0,_1fr))] sm:grid-rows-[repeat(8,minmax(0,_1fr))];
+            @apply grid-cols-3 sm:grid-cols-4 xl:grid-cols-5;
+            .item_container{
+                  @include gridMatrice((
+                        'none': ('-n+3': (1, 3), '4':(4, 2), '5': (4, 3), '6': (4, 2), '7': (6, 4),'8':(7, 3), '9': (6, 4), '10': (10, 3), '11': (10, 3), '12': (10, 3)),
+                        'sm': ('-n+4': (1, 3), '5': (4, 3), '6': (7, 2), '7': (4, 2), '8': (6, 3), '9': (4, 2), '10': (6, 3), '11': (4, 3), '12': (7, 2)),
+                        'xl': ('-n+5': (1, 3), '6': (4,3), '7': (7, 2), '8': (4, 5),'9': (4, 2) ,'10': (6, 3), '11': (4, 5), '12': (4, 3), '13': (7, 2))
+                  ), 'row');
+            }
+      }
+}
+
+
+.item_container {
+      @apply flex flex-row;
+      @apply items-center justify-center;
+      @apply relative w-full py-6 px-8 sm:px-12 lg:px-16 h-full;
+
+      .filter {
+            @apply absolute top-0 left-0 w-full h-full;
+
+            &_normal {
+                  @apply bg-dark_4/5 z-40;
+            }
+
+            &_radial {
+                  @apply z-10;
+                  background: radial-gradient(#16161600, #16161620);
+            }
+      }
+
+      .cart_tag {
+            @apply absolute top-4 left-4 z-50;
+            @apply py-3 px-3 lg:px-4 bg-#{$primary} rounded-xl;
+            @apply font-extrabold capitalize tag_md;
+            @apply shadow shadow-dark_5/10;
+            @apply select-none text-dark_2;
+      }
+
+      .image {
+            @apply z-10;
+      }
+
+      .image span {
+            filter: drop-shadow(10px -10px 10px #0C122640);
+      }
+}

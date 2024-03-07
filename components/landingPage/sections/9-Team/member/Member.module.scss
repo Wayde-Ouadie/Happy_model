@@ -1,0 +1,66 @@
+@import 'styles/text.scss';
+
+@mixin fc($space){
+    @apply justify-center items-center;
+    @apply flex flex-col space-y-#{$space};
+}
+
+@mixin d($dimension ){
+    @apply w-#{$dimension} h-#{$dimension};
+}
+
+._primary_text{
+    @apply text-#{$primary} text-center;
+}
+._secondary_text{
+    @apply text-#{$secondaryGrey} text-center;
+}
+
+// text
+.member_container{
+    .member_content{
+        .head{
+            .head{
+                &_title{
+                    @apply _secondary_text;
+                    @apply title_h6 uppercase ;
+                }
+                &_name{
+                    @apply _primary_text capitalize;
+                    @apply title_h4;
+                }
+            }
+        }
+        .body{
+            .body_resume{
+                @apply _secondary_text para_sm max-w-[250px];
+            }
+        }
+    }
+
+}
+
+// dimension
+.member_container{
+    @include fc(12);
+    .member_content{
+        @apply px-8;
+        @include fc(10);
+        .content{
+            @include fc(3);
+            .head{
+                @include fc(1);
+            }
+            .body{
+                .body_resume{
+                }
+            }
+        }
+        .footer{
+            @apply flex flex-row space-x-5; 
+            .social-network{
+                @include d('[23px]');
+            }
+        }
+    }
+}

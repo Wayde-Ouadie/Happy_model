@@ -1,0 +1,30 @@
+// FLEX
+
+.about_container{
+      .about{
+          &_motivation{
+              @include flex(('none': ('col', 6),'xs': ('row', 4),'lg': ('col', 4))){
+                  @apply justify-end items-center lg:items-end;
+              }; 
+              .motivation_slogan{
+                @apply flex flex-col items-start lg:items-end;
+              }
+          }
+          &_images {
+              @include flex(('none': ('col', 0))){
+                  @apply justify-center items-center sm:items-start lg:items-center;
+              }
+
+              .image_title{
+                  @apply flex flex-col justify-center sm:items-start lg:items-center space-y-2;
+              }
+          }
+          &_description{
+              @include flex(('none': ('col', 8))) {
+                  @apply justify-start md:justify-center lg:justify-end;
+                  @apply items-start md:items-center;
+              }
+          }
+      }
+      
+  }

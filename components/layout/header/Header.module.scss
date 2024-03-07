@@ -1,0 +1,102 @@
+@import 'styles/container.scss';
+@import 'styles/text.scss';
+
+// @import 'styles/function/animation.scss';
+
+.header_container{
+      // @apply fixed z-50 w-full left-0 top-0 right-0;
+      @apply w-full left-0 right-0 top-0 fixed z-50;
+      .header_content{
+            @apply flex flex-row items-center justify-between;
+            @apply container_section container_section_large;
+            
+      }
+      .header_logo{
+            @apply cursor-pointer;
+      }
+      .header_nav{
+            @apply flex flex-row justify-center items-center;
+            @apply space-x-6 xl:space-x-12;
+            .nav{
+                  &_items{
+                        @apply flex flex-row space-x-3 xl:space-x-6;
+                        .item{
+                              @apply text-#{$secondary};
+                              @apply para_sm;
+                              @apply cursor-pointer px-2 py-4;
+                        }
+                  }
+                  &_actions{
+                        @apply flex flex-row justify-center items-center;
+                        @apply space-x-8 xl:space-x-10;
+                  }
+            }
+      }
+      .header_state_active{
+            animation: opacityAnimationActive 0.7s;
+            @apply opacity-80;
+
+      }
+      .header_state_disabled{
+            animation: opacityAnimationDisabled 0.7s;
+            @apply opacity-100;
+
+      }
+}
+
+@keyframes opacityAnimationActive {
+      from {
+            @apply opacity-100;
+      }
+      to{
+            @apply opacity-70;
+
+      }
+}
+
+@keyframes opacityAnimationDisabled {
+      from {
+            @apply opacity-70;
+      }
+      to{
+            @apply opacity-100;
+
+      }
+}
+
+.transition_menu_by_scroll{
+      &_in{
+            -webkit-transition: all 0.2s ease-out;
+            -moz-transition: all 0.2s ease-out;
+            -o-transition: all 0.2s ease-out;
+            transition: all 0.2s ease-out;
+      }
+      &_out{
+            -webkit-transition: all 0.2s ease-in;
+            -moz-transition: all 0.2s ease-in;
+            -o-transition: all 0.2s ease-in;
+            transition: all 0.2s ease-in;
+      }
+}
+
+.header_container:not(.header_blur){
+      @apply py-3 xxs:py-5 xs:py-7;
+      @apply transition_menu_by_scroll_in;
+      .header_logo{
+            @apply transition_menu_by_scroll_in;
+            @apply w-14 xs:w-20;
+      }
+}
+
+.header_blur{
+      @apply backdrop-blur-lg py-3 shadow-md shadow-dark_4/20;
+      
+      @apply transition_menu_by_scroll_out;
+
+      background: rgb(26,118,162);
+      background: linear-gradient(250deg, rgba(26,118,162,0.25) 0%, rgba(62,81,152,0.3) 45%, rgba(16,72,99,0.2) 100%);
+      .header_logo{
+            @apply transition_menu_by_scroll_out;
+            @apply w-12 xs:w-16;
+      }
+}

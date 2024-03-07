@@ -1,0 +1,28 @@
+@import 'styles/function/other.scss';
+
+.image{
+      @apply relative;
+      // @apply left-[0.011411%];
+      &:nth-child(1){
+            @include scroll-t(0, '%');
+            @screen sm{
+                  @include scroll-t(8, '%');
+            }
+            @apply z-30 ;
+      }
+      &:nth-child(2){
+            @include scroll-t(80, '%');
+            @screen sm{
+                  @include scroll-t(40, '%');
+            }
+            @apply z-20;
+      }
+      &:nth-child(3){
+            @include scroll-t(90, '%');
+            @screen xxs{
+                  @include scroll-t(70, '%');
+            }
+            
+            @apply z-10;
+      }
+}

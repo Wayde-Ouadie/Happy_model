@@ -1,0 +1,35 @@
+@import 'styles/text.scss';
+
+@import 'styles/container.scss';
+@import 'styles/function/flex.scss';
+
+.member_container{
+    @apply flex flex-col space-y-6;
+    @apply justify-center items-center;
+    @apply container_section container_section_large;
+    .member{
+        &_team{
+            @apply w-full;
+            @include flex(('none': ('col', 8),'sm': ('row', 0),'lg': ('row', 4))){
+                @apply justify-between xl:items-stretch flex-wrap xl:flex-nowrap;
+            }
+            .member_item{
+                @apply w-full sm:w-2/5 xl:w-full;
+                margin-top: auto !important;
+                margin-bottom: auto !important;
+            }
+        }
+    }
+}
+
+.member_container{
+    .member_head{
+        .title{
+            @apply title_h2 text-#{$primary};
+            @apply capitalize;
+        }
+    }
+    .member_team{
+        
+    }
+}

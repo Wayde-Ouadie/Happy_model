@@ -1,0 +1,45 @@
+@import 'styles/function/flex.scss';
+
+.footer_container{
+    @apply flex flex-col space-y-10 xl:space-y-12;
+    .header_body{
+        @include flex(('none': ('col', 24),'sm': ('row', 4))){
+            @apply justify-between items-stretch;
+        };
+        .left{
+            @include flex(('none': ('col', 6)));
+            .intro_socialNetwork{
+                @include flex(('none': ('row', 8),'xxs': ('row', 12),'sm': ('row', 8),'lg': ('row', 12))){
+                    @apply justify-start items-center;
+                };
+            }
+        }
+        .right{
+            @apply h-auto;
+            @include flex(('none': ('col-reverse', 10),'xxs': ('row-reverse', 0),'sm': ('col', 12))){
+                @apply justify-between items-start xxs:items-end;
+            };
+            .goToTop{
+                @apply flex justify-end items-end;
+            }
+            .lang{
+                @apply flex flex-row space-x-4 items-center justify-center;
+            }
+        }
+    }
+    .menu{
+        @apply flex flex-col space-y-8;
+        .content{
+            @include flex(('none': ('col', 6),'lg': ('row', 12),'xl': ('row', 20),'2xl': ('row', 40))){
+                @apply justify-between items-stretch;
+            };
+            .nav_items{
+                @apply flex-grow;
+                @include flex(('none': ('row', 10),'sm': ('row', 2))){
+                    @apply justify-between flex-wrap sm:flex-nowrap;
+                };
+
+            }
+        }
+    }
+}

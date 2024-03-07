@@ -1,0 +1,54 @@
+.intro_container{
+    @apply w-screen overflow-hidden;
+    @apply relative;
+    @media screen and (orientation: landscape){
+        @apply h-[125vh] xl:h-[135vh] 3xl:h-[140vh];
+    }
+    @media screen and (orientation: portrait) {
+        @apply h-[140vh] md:h-[120vh];
+    }
+    @apply relative flex flex-col justify-start items-center;
+    .intro_content{
+        @apply relative; 
+    }
+    .water_filter{
+        @apply w-full h-full z-50;
+    }
+    .images_float_container{
+        @apply absolute w-screen h-full top-0 z-20;
+    }
+    .image{
+        @apply h-full w-screen select-none pointer-events-none;
+        &_stars{
+            @apply absolute top-0;
+            .filter{
+                @apply w-full h-full bg-dark_0/40 absolute z-20;
+            }
+        }
+        &_lune{
+            @apply absolute top-0 h-auto flex flex-row justify-center items-center;
+            
+        }
+        &_water{
+            @apply absolute top-0 left-0 bottom-0;
+            
+        }
+        &_cloud{
+            @apply absolute bottom-0;
+        }
+        &_bg{
+            @apply absolute h-0 bg-dark_0 bottom-0 left-0;
+        }
+    }
+    .bg_black{
+        @apply bg-dark_0 h-[60vh] w-full absolute bottom-0;
+    }
+}
+
+// .intro_container::before{
+//     @apply content-[''];
+//     @apply bg-gradient-to-t from-dark_0;
+//     @apply absolute bottom-0 w-full left-0 h-52;
+//     @apply z-50;
+//     @apply h-[100rem];
+// }

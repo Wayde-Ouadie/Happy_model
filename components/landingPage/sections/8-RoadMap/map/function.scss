@@ -1,0 +1,15 @@
+
+@use "sass:list";
+
+@mixin top($list, $unity){
+      @each $breakpoint ,$values in $list{
+          
+          @apply relative;
+          @if $breakpoint == none {
+              @apply top-[#{$values}#{$unity}];
+          } @else {
+              @apply #{$breakpoint}:top-[#{$values}#{$unity}];
+          }
+      }
+      @content;
+  }

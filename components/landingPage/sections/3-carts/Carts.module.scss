@@ -1,0 +1,50 @@
+@import 'styles/container.scss';
+@import './scss/flex.scss';
+@import 'styles/text.scss';
+
+.carts_container {
+      .carts{
+            &_header{
+                  .header{
+                        &_title{
+                              @apply title_h2 capitalize text-center text-#{$primary};
+                        }
+                        &_description{
+                              @apply para_md text-center text-#{$secondary};
+                        }
+                  }
+            }
+            &_deco{
+                  @apply select-none;
+                  .deco_text{
+                        @apply para_md text-#{$secondary};
+                        @apply text-end; 
+                  }
+            }
+      }
+}
+
+.carts_container{
+      @apply container_section container_section_medium;
+      .carts{
+            &_header{
+                  @apply w-full xs:w-11/12 md:w-10/12 xl:w-6/12;
+                  .header_description{
+                        @apply w-full xs:w-8/12;
+                  }
+            }
+            &_deco{
+                  @apply w-full relative;
+                  .deco_container{
+                        .deco_text{
+                              @apply para_md text-#{$primary}; 
+                              @apply w-[220px] 2xl:w-[320px];
+                        }
+                        .deco_image{
+                              @apply flex flex-col items-end cursor-pointer;
+                              @apply w-[120px] md:w-[145px];
+                        }
+                  }
+            }
+      }
+}

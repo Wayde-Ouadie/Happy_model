@@ -1,0 +1,17 @@
+.image{
+      @apply absolute;
+      &:nth-child(1){
+            @apply -top-44 xl:-top-40 z-30 ;
+      }
+      &:nth-child(2){
+            // @apply hidden;
+            @apply top-16 sm:top-20 xl:top-40 2xl:top-60 3xl:top-80 z-20;
+      }
+      &:nth-child(3){
+            
+            @apply top-10 xl:top-20 z-10;
+            @media (max-width: 1024px){
+                  @apply -right-[9.6%] sm:-right-[7.3%] md:-right-[7.7%] lg:right-0;
+            }
+      }
+}

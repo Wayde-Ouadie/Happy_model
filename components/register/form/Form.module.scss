@@ -1,0 +1,28 @@
+@import 'styles/text.scss';
+
+.component_container{
+    @apply flex flex-col space-y-12 w-full;
+    .form_title{
+        @apply title_h4 text-#{$primary};
+    }
+    .form_question {
+        @apply flex flex-col space-y-9 w-full;
+    }
+    .form_button {
+        @apply flex flex-col space-y-6;
+    }
+}
+
+.component_thanks {
+    @apply flex flex-col space-y-6;
+    @apply justify-center items-center;
+    @apply w-full md:w-4/5 mx-auto;
+    @apply py-12;
+    .title{
+        @apply title_h3 text-center text-#{$primary};
+    } 
+    .description{
+        @apply para_md text-#{$secondary};
+        @apply text-center ;
+    }
+}

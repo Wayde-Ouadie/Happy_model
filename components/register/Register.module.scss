@@ -1,0 +1,65 @@
+
+@import 'styles/text.scss';
+@import 'styles/function/flex.scss';
+
+@import 'styles/container.scss';
+@import './stages/Stages.module.scss';
+
+$screen1: 'xl';
+$screen2: 'lg';
+$screen3: 'sm';
+$screen4: 'xs';
+
+._width_stages{
+      @apply w-full #{$screen4}:w-10/12 #{$screen3}:w-full #{$screen1}:w-4/12;
+}
+
+.register_container{
+      @apply flex flex-col space-y-0;
+      @apply container_section container_section_large;
+      @apply min-h-screen justify-center items-center;
+      @apply mb-40;
+      .register_head{
+            @apply h-[80vh];
+            @apply flex flex-col justify-center items-center space-y-6;
+            @apply w-full #{$screen3}:w-8/12 #{$screen2}:w-3/5 mx-auto;
+            .head_title{
+                  @apply title_h1 text-#{$primary} text-center;
+                  span{
+                        @apply text-primary_1;
+                  }
+            }
+            .head_para{
+                  @apply para_lg text-#{$secondary};
+                  @apply w-full #{$screen2}:w-3/5;
+                  @apply text-center;
+            }
+      }
+      .register_body{
+            @include flex(('none': ('col-reverse', 0),'#{$screen1}': ('row', 6))){
+                  @apply justify-between items-center #{$screen1}:items-start;
+            };
+            @apply w-full;
+            .body{
+                  @apply flex flex-col space-y-16 #{$screen4}:space-y-6 items-center;
+                  &_title{
+                        @apply _width_stage_elem;
+                        @apply title_h3 text-#{$secondary} capitalize;
+                        @apply text-center;
+                        @apply items-start #{$screen2}:items-center #{$screen1}:items-start;
+                  }
+                  &_stages{
+                        @apply py-48 #{$screen1}:py-16;
+                        @include flex(('none': ('col', 12),'xs': ('col', 16), 'xl': ('col', 12)));
+                        @apply _width_stages;
+                  }
+                  &_form{
+                        @apply w-full #{$screen3}:w-[85%] #{$screen2}:w-[70%] #{$screen1}:w-[60%] 2xl:w-[55%] h-full;
+                        @apply shadow-none #{$screen4}:shadow-xl #{$screen4}:shadow-primary_1/10;
+                        @apply px-0 #{$screen4}:px-12 #{$screen3}:px-16;
+                        @apply py-0 #{$screen4}:py-16 #{$screen3}:py-20;
+                        @apply rounded-lg;
+                  }
+            }
+      }
+}

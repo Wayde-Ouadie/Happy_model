@@ -1,0 +1,26 @@
+@import "styles/style.scss";
+@import 'styles/text.scss';
+
+.navButton{
+    @apply flex flex-row items-center justify-center;
+    @apply cadre_blur space-x-3;
+    @apply border-2 border-primary_1/10;
+    @apply py-5 px-6 cursor-pointer;
+    .content{
+        @apply para_sm text-#{$primary};
+        @screen xs{
+            @apply para_md;
+        }
+    }
+    @apply shadow-lg shadow-primary_1/5;
+    @apply focus:outline-none;
+
+    &_rounded{
+        &_full{
+            @apply rounded-full;
+        }
+        &_auto{
+            @apply rounded-3xl py-5 xs:py-6 px-5 xs:px-6;
+        }
+    }
+}

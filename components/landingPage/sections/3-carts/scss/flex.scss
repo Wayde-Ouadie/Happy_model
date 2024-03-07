@@ -1,0 +1,19 @@
+@import 'styles/function/flex.scss';
+
+.carts_container{
+      @apply flex flex-col space-y-12 items-center justify-center;
+      .carts{
+            &_header{
+                  @apply flex flex-col space-y-4 items-center justify-center; 
+            }
+            &_deco{
+                  @apply flex flex-col items-end;
+                  .deco_container{
+                        @include flex(('none': ('col', 6), 'xs':('row', 6), 'xl': ('col', 6))){
+                              @apply items-end xs:items-center xl:items-end justify-center;
+                        };
+                  }
+                  
+            }
+      }
+}

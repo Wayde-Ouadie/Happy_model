@@ -1,0 +1,68 @@
+@import 'styles/container.scss';
+@import './scss/grid.scss';
+@import 'styles/text.scss';
+
+.collection_container{
+      @apply container_section container_section_small;
+      @apply flex flex-col space-y-12 lg:space-y-6;
+      @apply min-h-screen;
+      @apply max-w-[90rem];
+      .collection{
+            &_header{
+                  @apply title_h2 text-light_3 text-center;
+                  @apply w-full md:w-9/12 mx-auto capitalize;
+            }
+            &_body{
+                  @apply flex flex-col -space-y-8 lg:-space-y-16;
+                  @apply mx-0 lg:mx-12;
+                  @apply justify-center items-center;
+                  .body_image{
+                        @apply  xs:left-0;
+                        @apply z-0 w-[120%] relative;
+                        .image{
+                              @apply relative;
+                              @apply justify-center items-center flex;
+                              &_collection_1{
+                                    @apply -rotate-12 z-0 left-1 sm:left-5 md:left-10 my-auto;
+                              }
+                              &_collection_2{
+                                    @apply z-10 relative flex justify-center items-center;
+                                    .imageCenter{
+                                          @apply z-10;
+                                    }
+                                    .back{
+                                          @apply absolute flex justify-center items-center z-0;
+                                          @apply scale-x-[1.13] xl:scale-x-[1.24] 2xl:scale-x-[1.16] 3xl:scale-x-[1.35];
+                                          @apply scale-y-[1.15] xl:scale-y-[1.28] 2xl:scale-y-[1.21] 3xl:scale-y-[1.4];
+                                          
+                                    }                                
+                              }
+                              &_collection_3{
+                                    @apply rotate-12 z-0 right-1 sm:right-5 md:right-10 my-auto;
+                              }
+                        }
+                  }
+                  .body_button{
+                        @apply z-10 cursor-pointer;
+                        @apply w-24 sm:w-28 md:w-32 lg:w-40;
+                  }
+                  .body_text{
+                        @apply w-full;
+                        @apply flex flex-col xs:flex-row justify-between;
+                        @apply space-y-4 xs:space-y-0;
+                        @apply pt-12 xs:pt-6 md:pt-0;
+                        .text{
+                              @apply w-full xs:w-40 md:w-60 capitalize;
+                              @apply title_h3 text-#{$primary};
+                              &_right{
+                                    @apply text-center xs:text-right;
+                              }
+                              &_left{
+                                    @apply text-center xs:text-left;
+                              }
+                        }
+                  }
+            }
+      }
+      
+}

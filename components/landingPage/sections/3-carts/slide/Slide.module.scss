@@ -1,0 +1,19 @@
+
+
+.carts_items{
+    @apply flex flex-col justify-center items-center;
+    @apply w-full h-full;
+    .items_container{
+        @apply relative;
+        @apply w-[300%] xxs:w-[250%] xs:w-[200%] sm:w-[180%] md:w-[190%] lg:w-[170%] xl:w-[140%];
+    }
+    .wrapper{
+        @apply flex flex-row justify-center items-start;
+        @apply space-x-3 sm:space-x-2 lg:space-x-6 2xl:space-x-8 3xl:space-x-12;
+    }
+}
+
+.carts_navs {
+    @apply flex flex-row w-screen;
+    @apply px-6 xl:px-12 items-center justify-between fixed z-30; 
+}

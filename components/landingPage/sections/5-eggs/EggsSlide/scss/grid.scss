@@ -1,0 +1,53 @@
+@import 'styles/function/grid.scss';
+
+.eggsSlide_container{
+      @apply grid grid-cols-12 grid-rows-[repeat(3)] md:grid-rows-[repeat(2)] lg:grid-rows-1 w-screen;
+      @apply gap-x-0 lg:gap-x-12 xl:gap-x-16 2xl:gap-x-32;
+      @apply gap-y-4 lg:gap-y-0;
+      .eggsSlide{
+            &_text{
+                  @include grid(('none': (1, 12),'xs':(2, 11),'sm': (1, 12), 'lg': (1, 4)), 'col');
+                  @include grid(('none': (2,1), 'lg':(1, 1)), 'row');
+
+            }
+            &_image{
+                  @include grid(('none': (1, 12),'xs': (2, 9),'sm': (1, 5),'lg': (5, 4)), 'col');
+                  @include grid(('sm': (1,1)), 'row');
+                  @apply grid grid-cols-1 grid-rows-6;
+                  .deco{
+                        @include grid(('none': (1,1)), 'col');
+                        @include grid(('none': (1, 4)), 'row');
+                  }
+                  .egg{
+                        @include grid(('none': (1,1)), 'col');
+                        @include grid(('none': (2, 5)), 'row');
+
+                  }
+                  .deco{
+                        @apply grid grid-cols-8 grid-rows-6;
+                        .decoImage{
+                              &_num_1{
+                                    @include grid(('none': (6, 3),'2xl': (7,2)), 'col');
+                                    @include grid(('none':(3, 3),'2xl': (3,2)), 'row');
+                              }
+                              &_num_2{
+                                    @include grid(('none': (1, 4),'2xl': (1,3)), 'col');
+                                    @include grid(('none': (3,3)), 'row');
+                              }
+                              &_num_3{
+                                    @include grid(('none':(3, 3),'2xl': (3,2)), 'col');
+                                    @include grid(('none':(1, 3),'2xl': (2,2)), 'row');
+                              }
+                        }
+                  }
+                  .background{
+                        @include grid(('none': (1,1)), 'col');
+                        @include grid(('none': (2, 4)), 'row');
+                  }
+            }
+            &_data{
+                  @include grid(('none': (1, 12),'xs':(2, 10),'sm':(7, 6),'lg': (9, 4)), 'col');
+                  @include grid(('sm': (1,1)), 'row');
+            }
+      }
+}

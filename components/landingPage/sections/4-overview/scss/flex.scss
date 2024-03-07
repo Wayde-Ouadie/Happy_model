@@ -1,0 +1,6 @@
+@import 'styles/function/flex.scss';
+
+.overview_container{
+    @apply flex flex-col space-y-12 lg:space-y-2;
+    @apply justify-center items-center;
+}

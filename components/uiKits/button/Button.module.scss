@@ -1,0 +1,62 @@
+@import 'styles/text.scss';
+
+
+
+.button{
+      @apply flex flex-row space-x-6 justify-center items-center whitespace-nowrap;
+      @apply focus:outline-none;
+      &_back{
+            &_black{
+                  @apply text-#{$primary};
+                  @apply bg-#{$contrast};
+                  @apply focus:ring-4 focus:ring-#{$primary}/30;
+            }
+            &_white{
+                  @apply text-#{$contrast};
+                  @apply bg-#{$primary};
+                  @apply focus:ring-4 focus:ring-#{$primary}/30;
+                  
+            }
+            &_gradien{
+                  
+                  @apply focus:ring-4;
+            }
+            &_none{
+                  @apply text-#{$primary};
+            }
+      }
+      &_shadow{
+            &_active{
+                  @apply shadow-lg;
+                  &, .button_back_black{
+                        @apply shadow-#{$primary}/20;
+                  } 
+            }
+      }
+      &_border{
+
+      }
+      &_size{
+            &_lg{
+                  @apply title_h6;
+                  @screen md{
+                        @apply title_h5;
+                  }
+                  &:not(&_back_none){
+                        @apply px-7 py-4 rounded-lg;
+                  }
+            }
+            &_sm{
+                  @apply title_h6;
+                  &:not(&_back_none){
+                        @apply px-6 py-3 rounded-lg;
+                  }
+            }
+            &_xs{
+                  @apply tag_md;
+                  &:not(&_back_none){
+                        @apply px-6 py-3 rounded-lg;
+                  }
+            }
+      }
+}

@@ -1,0 +1,103 @@
+@import 'styles/function/grid.scss';
+@import 'styles/function/flex.scss';
+@import 'styles/text.scss';
+@import 'styles/container.scss';
+
+@import './scss/grid.scss';
+@import './scss/flex.scss';
+
+.text_about_section {
+    @screen lg{
+        @apply para_sm #{!important};
+    }
+    @apply text-#{$secondary};
+    @apply para_md;
+}
+
+.about_container{
+    @apply container_section container_section_medium;
+    
+}
+
+$pading_to_image: ( 'md': 0 ,'lg': 12, 'xl': 14,'2xl': 16, '3xl': 16);
+
+// container text 
+.about_container{
+    // motivation
+    @each $bp, $space in $pading_to_image{
+        .about_motivation{
+            @apply #{$bp}:pr-#{$space};
+        }
+        // description
+        .about_description{
+            @apply #{$bp}:pl-#{$space};
+        }
+    }
+    .about_motivation{
+        @apply w-full xl:w-10/12 4xl:w-full;
+        @apply pt-20 sm:pt-0;
+        .motivation_slogan{
+            @apply w-full sm:w-10/12 md:w-8/12 lg:w-7/12 xl:w-full;
+        }
+
+    }
+    .about_description{
+        @apply w-full lg:w-11/12 xl:w-9/12 2xl:w-11/12 3xl:w-10/12;
+    }
+}
+
+// text
+.about_container{
+    .about{
+        &_motivation {
+            .motivation_text{
+                @apply text_about_section text-start xs:text-end;
+            }
+        }
+        &_images{
+            .image_nft{
+                @apply relative;
+                // @apply -top-6 lg:-top-12;
+                @apply z-10;
+                @apply w-full lg:w-[86%];
+            }
+            .image_title{
+                @apply w-full sm:w-[130%] lg:w-[140%] xl:w-[140%];
+                .subtitle, .title{
+                    @apply text-center sm:text-left lg:text-center;
+                }
+                .title{
+                    @apply title_h2 text-#{$primary};
+                }
+                .subtitle{
+                    @apply para_md text-#{$secondary};
+                }
+            }
+            
+        }
+        &_description{
+            .text{
+                @apply text_about_section;
+            }
+        }
+    }
+}
+
+// deco
+.about{
+    @apply relative;
+    .about_other {
+        @apply hidden xxs:block absolute;
+        @apply left-auto top-[65%] sm:top-[55%] sm:bottom-[20%] md:top-[45%] md:bottom-[30%];
+        @apply w-40 md:w-52 xl:w-72;
+        @apply -right-20 md:-right-32 xl:-right-36;
+    }
+    .about_images{
+        .image_title{
+            @apply z-20
+        }
+    }
+}
+
+
+

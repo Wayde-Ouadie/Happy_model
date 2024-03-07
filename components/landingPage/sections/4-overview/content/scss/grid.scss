@@ -1,0 +1,21 @@
+@import "styles/function/grid";
+
+.content_container{
+    @include grid(('none': ('1', '4')),'row');
+    @include grid(('none': ('1', '12')), 'col');
+    @apply grid grid-rows-8 lg:grid-rows-6 grid-cols-12;
+    .content{
+        &_description{
+            @include grid(('none': (1, 12),'sm': (2, 10),'lg': (1, 3)),'col');
+            @include grid(('none': (1, 2),'sm': (1 , 1), 'md': (1, 2),'lg': (1, 6)), 'row');
+        }
+        &_image{
+            @include grid(('none': (1, 12),'xs': (2, 11),'sm': (2, 9),'lg': (5, 5)),'col');
+            @include grid(('none': (4, 6),'sm': (2, 6), 'md': (3, 5),'lg': (1, 6)), 'row');
+        }
+        &_data{
+            @include grid(('none': (1, 12),'sm': (10, 3),'lg': (10, 3),'xl': (10, 2)),'col');
+            @include grid(('none': (3, 1),'sm': (2, 5),'lg': (1, 6)), 'row');
+        }
+    }
+}

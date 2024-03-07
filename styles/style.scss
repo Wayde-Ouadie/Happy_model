@@ -1,0 +1,7 @@
+.cadre_blur {
+    @apply backdrop-blur;
+    background: rgb(26,118,162);
+    background: linear-gradient(180deg, rgba(26,118,162,0.25) 0%, rgba(62,81,152,0.3) 45%, rgba(16,72,99,0.2) 100%);
+    @apply rounded-lg;
+    @apply border-light_1/20 border-[0.1px];
+  }

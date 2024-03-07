@@ -1,0 +1,53 @@
+
+@import 'styles/container.scss';
+@import 'styles/text.scss';
+
+.menu_container{
+    .item{
+        @apply cursor-pointer;
+    }
+}
+.menu_container{
+    @apply fixed top-0 left-0 right-0 bottom-0 w-screen z-30;
+    @apply z-20 h-full relative top-0 left-0 right-0 w-full flex overflow-hidden;
+        .menu_content{
+            @apply py-[25%] md:pt-[16%] lg:pt-[10%] pb-8 h-screen;
+            @apply container_section container_section_small;
+            @apply flex flex-col justify-between bg-primary_1;
+            .menu{
+                &_items{
+                    @apply flex flex-col items-center space-y-2;
+                    .item{
+                        @apply text-#{$primary};
+                        @apply cursor-pointer px-4;
+                        @apply text-2xl xs:text-3xl xl:text-4xl font-extrabold text-center;
+                    }
+                }
+                &_footer{
+                    @apply flex flex-col-reverse xs:flex-row w-full justify-between items-center;
+                    .footer{
+                        @apply flex flex-row space-x-5;
+                        &_confidential{
+                            @apply pb-4 xs:pb-0;
+                            .item{
+                                @apply text-#{$primary};
+                            }
+                        }
+                        &_socialNetwork{
+                            @apply space-x-4 xs:space-x-6;
+                            .item{
+                                @apply w-5 xs:w-7 h-5 xs:h-7;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            .background{
+                @apply absolute top-0 left-0 right-0 bottom-0;
+            }
+    }
+    .menu_background_color{
+        @apply bg-light_1 top-0 right-0 left-0 bottom-0 fixed h-full w-full z-10;
+    }
+}

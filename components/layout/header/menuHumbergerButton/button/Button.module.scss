@@ -1,0 +1,23 @@
+@import 'styles/text.scss';
+
+.menuButton_container {
+    @apply flex flex-col justify-end items-end;
+    @apply py-4 cursor-pointer;
+    @apply w-8;
+
+    .menuButton_row {
+        @apply h-[0.2rem] bg-#{$secondary};
+    }
+
+    .menuButton_rowSpace {
+        @apply h-4;
+    }
+
+    .menuButton_row:nth-child(1) {
+        @apply w-full;
+    }
+
+    .menuButton_row:nth-child(3) {
+        @apply w-10/12;
+    }
+}

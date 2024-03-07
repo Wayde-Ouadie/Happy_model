@@ -1,0 +1,23 @@
+@import 'styles/container.scss';
+@import './scss/flex.scss';
+@import 'styles/text.scss';
+
+.overview_container{
+    // @apply container_section container_section_medium;
+    .slide{
+        @apply container_section container_section_medium ;
+        @apply pb-52
+
+    }
+    .overview_header{
+        @apply w-11/12 sm:w-8/12 md:w-7/12 lg:w-6/12 2xl:w-5/12;
+    }
+}
+
+// text
+.overview_container{
+    .overview_header{
+        @apply text-center title_h2;
+        @apply text-#{$primary} capitalize;
+    }
+}

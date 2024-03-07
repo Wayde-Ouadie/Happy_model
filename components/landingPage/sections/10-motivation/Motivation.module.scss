@@ -1,0 +1,47 @@
+@import 'styles/container.scss';
+@import 'styles/text.scss';
+@import 'styles/function/flex.scss';
+// text
+.motivation_container{
+      .motivation_content{
+            .title{
+                  @apply lg:max-w-[38%];
+                  @apply  text-#{$primary};
+                        @apply title_h2;
+                  @apply text-center sm:text-start; 
+            }
+            .content{
+                  @apply w-full lg:max-w-[40%];
+                  .para{
+                        @apply xxs:flex;
+                        @apply para_md text-center sm:text-start lg:text-center text-#{$primary};
+                        @screen 2xl{
+                              @apply para_lg;
+                        }
+                  }
+            }
+      }
+}
+
+.motivation_container{
+      @apply container_section container_section_large;
+      @apply relative flex flex-row justify-center items-center;
+      .motivation_content{
+            @apply z-20 h-full relative;
+            @apply py-60;
+            @apply px-8 xs:px-16 sm:px-12 lg:px-12 2xl:px-24;
+            @include flex(('none': ('col', 2) ,'xs':('col', 12),'lg':('row', 6))){
+                  @apply justify-between items-center xxs:items-start lg:items-center;
+            }
+            .content{
+                  @include flex(('none': ('col', 1) ,'xxs': ('col', 6))){
+                        @apply justify-center items-center sm:items-start lg:items-center;
+                  }
+            }
+      }
+      .motivation_back{
+            @apply absolute left-0 right-0 w-full z-0;
+            @apply container_section container_section_large;
+            filter: drop-shadow(10px 10px 25px #1EB1F760);
+      }
+}

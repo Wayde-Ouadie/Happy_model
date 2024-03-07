@@ -1,0 +1,13 @@
+.container_large{
+      @apply space-x-4 px-6;
+  }
+  .flagSelector_container{
+    @apply cursor-pointer;
+    .container_flag{
+        @apply flex flex-row justify-between items-center ring-0 mx-0 px-0;
+        @apply cursor-pointer;
+        .content_flag{
+            @apply w-5 h-5;
+        }
+    }
+  }

@@ -1,0 +1,12 @@
+.backdrop{
+      @apply fixed h-full top-0 right-0 left-0 z-30;
+      @apply flex flex-row justify-center items-center; 
+      .modal{
+            @apply z-30;
+            @apply m-16 w-96 select-none;
+      }
+      .back{
+            @apply bg-dark_0/40 z-20 backdrop-blur-md;
+            @apply fixed h-screen w-screen;
+      }
+}

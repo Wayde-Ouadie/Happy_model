@@ -1,0 +1,37 @@
+$screen1: 'xl';
+$screen2: 'lg';
+$screen3: 'sm';
+$screen4: 'xs';
+
+@import 'styles/function/flex.scss';
+@import 'styles/text.scss';
+
+._width_stage_elem{
+      @apply w-full #{$screen3}:w-4/5 #{$screen2}:w-2/5 #{$screen1}:w-full;
+
+}
+
+.stages_items{
+    @include flex(('none': ('col', 8), #{$screen2}: ('row', 0), #{$screen1}: ('col', 12))){
+      @apply flex-nowrap #{$screen2}:flex-wrap;
+    };
+    @apply justify-between items-center;
+    .item{
+            @include flex(('none': ('row', 1),#{$screen3}: ('row', 8),'2xl': ('row', 12))){
+                  @apply justify-start items-start;
+            };
+            @apply _width_stage_elem;
+            @apply pb-0 #{$screen2}:pb-12 #{$screen1}:pb-0;
+            .number{
+                  @apply text-4xl xs:text-6xl 2xl:text-7xl font-black text-grey_5/40;
+                  @apply w-[6rem] xs:w-[8.3rem] 2xl:w-36 -mt-2;
+            }
+            .value{
+                  @apply para_md w-full text-#{$secondaryGrey};
+                  @apply py-0 sm:pt-2;
+                  a{
+                        @apply text-primary_3;
+                  }
+            }
+    }
+}
